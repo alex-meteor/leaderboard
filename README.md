@@ -1,2 +1,2 @@
 # leaderboard
-connect using meteorlab
+ddp using meteorlab database

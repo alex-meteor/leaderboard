@@ -1,0 +1,40 @@
+<head>
+    <title>Word3</title>
+</head>
+<body>
+  <h1>Word3</h1>
+  <div class="loginbuttons">{{> loginButtons}}</div>
+  <div class="leaderboard">{{> leaderboard}}</div>
+  <div class="addplayer">{{> addPlayerForm}}</div>
+  <div class="removeplayer">{{> removePlayer}}</div>
+</body>
+
+<template name="leaderboard">
+{{#if currentUser}}
+<ul>
+  {{#each player}}
+  <li class="player {{selectedClass}}">{{name}}: {{score}}</li>
+  {{/each}}
+  {{#if showSelectedPlayer}}
+    <li>Selected Player: {{showSelectedPlayer.name}}</li>
+  {{/if}}
+</ul>
+  <input type="button" class="increment" value="Give 5 Points">
+  <input type="button" class="decrement" value="Remove 5 Points">
+  {{/if}}
+</template>
+
+<template name="addPlayerForm">
+  {{#if currentUser}}
+    <form>
+        <input type="text" name="playerName">
+        <input type="submit" value="Add Player">
+      </form>
+   {{/if}}
+</template>
+
+<template name="removePlayer">
+  {{#if currentUser}}
+    <input type="button" class="remove" value="Remove Player">
+  {{/if}}
+</template>

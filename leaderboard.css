@@ -1,0 +1,11 @@
+.leader1 {
+  color: blue;
+}
+
+.leader2 {
+  color: red;
+}
+
+.selected{
+      background-color: yellow;
+}
